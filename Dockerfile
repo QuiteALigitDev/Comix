@@ -1,13 +1,14 @@
 FROM python:3.12-slim
 
-WORKDIR /app
+WORKDIR /comix
 
 RUN apt update && apt install -y unrar-free curl && rm -rf /var/lib/apt/lists/*
 
-COPY https://raw.githubusercontent.com/QuiteALigitDev/Comix/refs/heads/main/requirements.txt .
+RUN curl -L https://raw.githubusercontent.com/QuiteALigitDev/Comix/refs/heads/main/requirements.txt -o requirements.txt
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY https://raw.githubusercontent.com/QuiteALigitDev/Comix/refs/heads/main/main.py .
+RUN curl -L  https://raw.githubusercontent.com/QuiteALigitDev/Comix/refs/heads/main/main.py -o main.py
 
 EXPOSE 5000
 

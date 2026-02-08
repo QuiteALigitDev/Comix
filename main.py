@@ -101,7 +101,7 @@ def view_images():
         body { margin:0; background:#000 }
         img {
             height:auto;
-            width:60vw;
+            width:85vw;
             display:block;
             margin:0 auto 20px;
         }
